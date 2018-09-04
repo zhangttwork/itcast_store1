@@ -58,9 +58,11 @@
                <span>商品分类</span>
              </el-menu-item>
            </el-submenu>
-    </el-menu>
+         </el-menu>
        </el-aside>
-       <el-main>Main</el-main>
+       <el-main>
+         
+       </el-main>
     </el-container>
    </el-container>
 </template>
