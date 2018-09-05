@@ -12,6 +12,8 @@ import MyHttp from '@/plugins/MyHttp';
 // import App from './App.vue';
 Vue.use(ElementUI);
 Vue.use(MyHttp);
+
+
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({

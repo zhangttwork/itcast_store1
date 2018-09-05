@@ -42,7 +42,7 @@ export default {
   }
 };
 </script>
-/*<style> */
+<style>
 .login-wrap {
   background-color: #324152;
   height: 100%;
