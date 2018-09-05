@@ -25,19 +25,32 @@ export default {
     };
   },
   methods: {
-    handleLogin() {
-      this.$http
-        .post('login', this.formData)
-        .then(response => {
-          const { meta: { msg, status } } = response.data;
-          if (status === 200) {
-            this.$message.success(msg);
-            sessionStorage.setItem('token', response.data.data.token);
-            this.$router.push('/');
-          } else {
-            this.$message.error(msg);
-          }
-        });
+    // es7新语法： async await
+    async handleLogin() {
+      
+      const response = await this.$http.post('login', this.formData);
+      const { meta: { msg, status } } = response.data;
+      
+      if (status === 200) {
+        this.$message.success(msg);
+        sessionStorage.setItem('token', response.data.data.token);
+        this.$router.push('/');
+      } else {
+        this.$message.error(msg);
+      }
+
+      // this.$http
+      //   .post('login', this.formData)
+      //   .then(response => {
+      //     // const { meta: { msg, status } } = response.data;
+      //     // if (status === 200) {
+      //     //   this.$message.success(msg);
+      //     //   sessionStorage.setItem('token', response.data.data.token);
+      //     //   this.$router.push('/');
+      //     // } else {
+      //     //   this.$message.error(msg);
+      //     // }
+      //   });
     }
   }
 };

@@ -4,16 +4,17 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import ElementUI from 'element-ui';
-// import Vue from 'vue';
-// import ElementUI from 'element-ui';
+import moment from 'moment';
+
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/index.css';
+
+Vue.filter('fmDate',(value,fmStr)=>{
+    return moment(value).format(fmStr);
+})
 import MyHttp from '@/plugins/MyHttp';
-// import App from './App.vue';
 Vue.use(ElementUI);
 Vue.use(MyHttp);
-
-
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
