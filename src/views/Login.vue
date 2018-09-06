@@ -26,11 +26,10 @@ export default {
   },
   methods: {
     // es7新语法： async await
-    async handleLogin() {
-      
+    async handleLogin() { 
       const response = await this.$http.post('login', this.formData);
       const { meta: { msg, status } } = response.data;
-      
+
       if (status === 200) {
         this.$message.success(msg);
         sessionStorage.setItem('token', response.data.data.token);
