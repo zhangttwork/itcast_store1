@@ -4,7 +4,7 @@ import Login from '@/views/Login.vue';
 import Home from '@/views/Home.vue';
 import Users from '../views/users/List.vue';
 import Rights from '@/views/rights/rights';
-
+import Roles from '@/views/rights/Roles';
 // import HelloWorld from '@/components/HelloWorld';
 Vue.use(Router);
 // @为src文件夹
@@ -28,6 +28,11 @@ export default new Router({
           name: 'rights',
           path: '/rights',
           component: Rights
+        },
+        {
+          name: 'roles',
+          path: '/roles',
+          component: Roles
         }
       ] 
     }

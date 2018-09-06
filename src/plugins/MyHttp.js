@@ -4,7 +4,7 @@ const MyHttp = {};
 MyHttp.install = function(Vue) {
   // 设置 baseURL
   axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/';
-
+  // let loadingInstance = null;
   // axios 提供了一个过滤器
   axios.interceptors.request.use(function (config) {
 
@@ -12,10 +12,15 @@ MyHttp.install = function(Vue) {
       const token =sessionStorage.getItem('token');
       config.headers.Authorization = token;
     }
+
+    // loadingInstance = Loading.service();
+
     return config;
   },function (error) {
     return Promise.reject(error);
   });
+
+
 
   Vue.prototype.$http = axios;
 };

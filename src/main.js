@@ -8,11 +8,13 @@ import moment from 'moment';
 
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/index.css';
-
+import { Loading } from 'element-ui';
+import MyBreadcrumb from '@/components/MyBreadcrumb';
+import MyHttp from '@/plugins/MyHttp';
 Vue.filter('fmDate',(value,fmStr)=>{
     return moment(value).format(fmStr);
-})
-import MyHttp from '@/plugins/MyHttp';
+});
+Vue.component(MyBreadcrumb.name,MyBreadcrumb);
 Vue.use(ElementUI);
 Vue.use(MyHttp);
 Vue.config.productionTip = false;
