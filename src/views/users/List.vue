@@ -178,7 +178,7 @@ export default {
   methods: {
     async loadData() {
       
-      this.$http.defaults.headers.common['Authorization'] = sessionStorage.getItem('token');
+      // this.$http.defaults.headers.common['Authorization'] = sessionStorage.getItem('token');
 
       const response = await this.$http.get(`users?pagenum=${this.pagenum}&pagesize=${this.pagesize}&query=${this.searchValue}`);
 
